@@ -10,7 +10,7 @@ Field values are saved across multiple columns (e.g., textValue, numberValue, da
 
 ### 🎯 Objectives
 - Allow creation and configuration of form structures consisting of various field types.
-- Enable runtime attachment of forms to any service entity (e.g., user, event, cohort) using itemId and entityType.
+- Enable runtime attachment of forms to any service entity (e.g., user, event, cohort) using itemId and contextType.
 - Store and retrieve field values submitted via forms across type-specific columns.
 - Support integration across services through APIs or npm package.
 - Ensure flexibility for frontend rendering and validation via JSON-driven form definitions.
@@ -22,7 +22,7 @@ Field values are saved across multiple columns (e.g., textValue, numberValue, da
 - Compose forms with ordering, grouping, and logic using JSON structures.
 - Store submitted field values across multiple typed columns for filtering and reporting.
 - APIs to: Fetch forms by entity type, Submit field values, Retrieve submitted values
-- Support multiple entity types using itemId and entityType.
+- Support multiple entity types using itemId and contextType.
 - Dynamic configuration with no need for DB schema migration.
 - Reusable across all services with minimal setup.
 - Designed for integration with role and permission systems.
@@ -50,7 +50,7 @@ Field values are saved across multiple columns (e.g., textValue, numberValue, da
 - id, name, label, type, validation rules, options (for dropdown/radio), visibility, required
 
 #### 3. Field Value
-- id, fieldId, itemId (userId, cohortId, eventId, etc.), entityType (e.g., 'user', 'event'), textValue, numberValue, dateValue, dropdownValue, etc., createdBy, createdAt
+- id, fieldId, itemId (userId, cohortId, eventId, etc.), contextType (e.g., 'user', 'event'), textValue, numberValue, dateValue, dropdownValue, etc., createdBy, createdAt
 
 ---
 
@@ -62,6 +62,6 @@ Refer to [Custom Field and Form Table Schema Documentation](./db-design.md) for 
 ### 👥 Assumptions
 
 - itemId will be globally unique for each record (userId, eventId etc.)
-- entityType is passed to identify the owning service context
+- contextType is passed to identify the owning service context
 - Permissions will be handled at the API layer or middleware
 - No hardcoded logic in consuming services — forms are dynamic
