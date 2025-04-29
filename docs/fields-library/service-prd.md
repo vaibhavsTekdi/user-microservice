@@ -40,7 +40,7 @@ Field values are saved across multiple columns (e.g., textValue, numberValue, da
 - file (optional)
 - multiselect (optional)
 
-### Entities
+### 🧹 Entities
 
 #### 1. Form
 - id, name, description, isEnabled, formType, formJson
