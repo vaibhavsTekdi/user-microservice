@@ -41,7 +41,7 @@ Stores field information with the field type and other extra information
 
 ---
 
-### 📋 `#__FieldValues`
+### 📋 `#__fieldValues`
 
 Stores actual submitted values for different fields against specific entities.
 
@@ -66,7 +66,7 @@ Stores actual submitted values for different fields against specific entities.
 
 ---
 
-### 📋 `#__Forms`
+### 📋 `#__forms`
 
 Stores form structures with metadata.
 
@@ -82,3 +82,21 @@ Stores form structures with metadata.
 | `updatedat`        | timestamp with time zone | Record update timestamp               |
 | `createdBy`        | uuid                     | Created by user ID                    |
 | `updatedBy`        | uuid                     | Updated by user ID                    |
+
+---
+
+### 📋 `#__formSubmissions`
+
+Stores form-level submission status for a given item (e.g., user, cohort, event).
+
+
+| Column         | Type                     | Description                                         |
+|----------------|------------------------- |-----------------------------------------------------|
+| `submissionId` | uuid (PK)                | Unique submission ID                                |
+| `formId`       | uuid (FK)                | Form that was submitted                             |
+| `itemId`       | uuid                     | The item (user, event, cohort) the form belongs to  |
+| `status`       | integer                  | 0 = draft, 1 = final submit                         |
+| `createdBy`    | uuid                     | ID of creator                                       |
+| `updatedBy`    | uuid                     | ID of updater                                       |
+| `createdAt`    | timestamp with time zone | Timestamp of creation                               |
+| `updatedAt`    | timestamp with time zone | Timestamp of update                                 |
