@@ -110,7 +110,15 @@ Each of these field definitions is stored as a separate row in the Fields table,
 - fieldAttributes (jsonb): contains UI configuration, options, and conditional logic
 
 #### 3. Field Value
-- id, fieldId, itemId (userId, cohortId, eventId, etc.), contextType (e.g., 'user', 'event'), textValue, numberValue, dateValue, dropdownValue, etc., createdBy, createdAt
+- id, fieldId, itemId (userId, cohortId, eventId, etc.), contextType (e.g., 'user', 'event'),
+- textValue, numberValue, dateValue, dropdownValue, etc., createdBy, createdAt
+
+#### 4. Form Submission
+- submissionId (UUID)
+- formId (UUID)
+- itemId (UUID)
+- status (integer): 0 = Draft, 1 = Final Submit
+- createdAt, updatedAt, createdBy, updatedBy
 
 ---
 
