@@ -45,24 +45,24 @@ Stores field information with the field type and other extra information
 
 Stores actual submitted values for different fields against specific entities.
 
-| Column             | Type                    | Description                                       |
-| ------------------ | ----------------------- | ------------------------------------------------- |
-| `fieldValuesId`    | uuid (PK)               | Primary key, unique field value identifier        |
-| `fieldId`          | uuid (FK)               | Reference to the field definition                 |
-| `itemId`           | uuid                    | ID of the associated entity (user, event, etc.)   |
-| `textValue`        | text                    | Value for text fields                             |
-| `numberValue`      | numeric                 | Value for number fields                           |
-| `dateValue`        | date                    | Value for date fields                             |
-| `dropdownValue`    | text                    | Value for dropdown fields                         |
-| `radioValue`       | text                    | Value for radio fields                            |
-| `checkboxValue`    | text                    | Value for checkbox fields                         |
-| `textareaValue`    | text                    | Value for textarea fields                         |
-| `fileValue`        | text                    | Value for file fields                             |
-| `multiselectValue` | jsonb                   | Value for multiselect fields                      |
-| `createdAt`        | timestamp with time zone| Record creation timestamp                         |
-| `updatedAt`        | timestamp with time zone| Record update timestamp                           |
-| `createdBy`        | uuid                    | Created by user ID                                |
-| `updatedBy`        | uuid                    | Updated by user ID                                |
+| Column             | Type                    | Description                                             |
+| ------------------ | ----------------------- | ------------------------------------------------------- |
+| `fieldValuesId`    | uuid (PK)               | Primary key, unique field value identifier              |
+| `fieldId`          | uuid (FK)               | Reference to the field definition                       |
+| `itemId`           | uuid                    | ID of the associated entity (user, event, etc.)         |
+| `textValue`        | text                    | Free-form user input of text                            |
+| `numberValue`      | numeric                 | Allows both integer and decimal values, precision-safe  |
+| `dateValue`        | date                    | Native PostgreSQL date format                           |
+| `dropdownValue`    | character varying       | Stores selected option text or code                     |
+| `radioValue`       | character varying       | Similar to dropdown, stores one selected value          |
+| `checkboxValue`    | boolean                 | Stores true/false only                                  |
+| `textareaValue`    | text                    | Longer free-form text                                   |
+| `fileValue`        | character varying       | File path or reference to file ID                       |
+| `multiselectValue` | jsonb                   | Stores array of selected values (typed or coded)        |
+| `createdAt`        | timestamp with time zone| Record creation timestamp                               |
+| `updatedAt`        | timestamp with time zone| Record update timestamp                                 |
+| `createdBy`        | uuid                    | Created by user ID                                      |
+| `updatedBy`        | uuid                    | Updated by user ID                                      |
 
 ---
 
