@@ -10,7 +10,6 @@ Stores field information with the field type and other extra information
 | ------------------ | ----------------------------- | ----------------------------------------- |
 | `fieldId`          | uuid (PK)                     | Primary key, unique field identifier      |
 | `context`          | character varying             | Context of the field usage                |
-| `groupId`          | character varying             | Grouping ID for fields                    |
 | `name`             | character varying             | Field machine-readable name               |
 | `label`            | character varying             | Field display label                       |
 | `defaultValue`     | character varying             | Default value for the field               |
