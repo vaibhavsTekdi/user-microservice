@@ -57,7 +57,6 @@ Stores actual submitted values for different fields against specific entities.
 | `checkboxValue`    | boolean                 | Stores true/false only                                  |
 | `textareaValue`    | text                    | Longer free-form text                                   |
 | `fileValue`        | character varying       | File path or reference to file ID                       |
-| `multiselectValue` | jsonb                   | Stores array of selected values (typed or coded)        |
 | `createdAt`        | timestamp with time zone| Record creation timestamp                               |
 | `updatedAt`        | timestamp with time zone| Record update timestamp                                 |
 | `createdBy`        | uuid                    | Created by user ID                                      |
